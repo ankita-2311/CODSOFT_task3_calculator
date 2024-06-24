@@ -16,9 +16,11 @@ function setOperation(op) {
         calculate();
     }
     operation = op;
+    updateDisplay(); // Update display immediately after setting operation
     previousInput = currentInput;
     currentInput = '';
 }
+
 
 function calculate() {
     let result;
@@ -58,7 +60,10 @@ function clearDisplay() {
 }
 
 function updateDisplay() {
-    display.innerText = currentInput;
+    if (operation) {
+        display.innerText = `${previousInput} ${operation} ${currentInput}`;
+    } else {
+        display.innerText = currentInput;
+    }
 }
-
 clearDisplay();
