@@ -1,4 +1,3 @@
-// script.js
 let currentInput = '';
 let previousInput = '';
 let operation = null;
@@ -16,11 +15,10 @@ function setOperation(op) {
         calculate();
     }
     operation = op;
-    updateDisplay(); // Update display immediately after setting operation
     previousInput = currentInput;
     currentInput = '';
+    updateDisplay(); // Update display immediately after setting operation
 }
-
 
 function calculate() {
     let result;
